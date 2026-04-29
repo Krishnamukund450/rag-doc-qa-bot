@@ -89,13 +89,85 @@ It allows users to upload documents and ask natural language questions. The syst
 **Safety:**
 - If answer not found → returns “I don’t know”
 
+
 ---
 
-# 🚀 FINAL STEP
+## 📄 Source Citations
 
-After adding:
+Each answer includes source citations to show where the information was retrieved from.
+
+- PDF files → show filename and page number  
+- DOCX/TXT → show filename only  
+
+This ensures transparency and helps users verify the answers.
+
+
+
+---
+
+## ⚙️ Installation & Setup
+
+Follow these steps to set up the project on your system:
+
+### 1. Clone the Repository
 
 ```bash
-git add README.md
-git commit -m "Added instructions section"
-git push
+git clone https://github.com/Krishnamukund450/rag-doc-qa-bot.git
+cd rag-doc-qa-bot
+```
+### 2. Create a Virtual Environment
+
+```bash
+python -m venv venv
+venv\Scripts\activate   # For Windows
+```
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+### 4. Install & Setup Ollama (Local LLM)
+
+Download Ollama from: https://ollama.com
+
+Then pull the required model:
+```bash
+
+ollama pull llama3
+```
+### ▶️ How to Run the Project
+Option 1: Run Web UI (Recommended)
+```bash
+streamlit run streamlit_app.py
+```
+
+Open in browser:
+http://localhost:8501
+
+Option 2: Run via Command Line
+```bash
+python app.py
+```
+---
+### 📝 How to Use
+1.Upload documents (PDF, TXT, DOCX) using the sidebar (if using UI)
+2.Click “Index Documents”
+3.Ask questions in the input box
+4.View answers along with source citations
+
+
+---
+
+## 💬 Example Queries
+
+- What is artificial intelligence?
+- Explain machine learning
+- What is cloud computing?
+- Difference between AI and machine learning?
+- What is agriculture? → (Expected: I don’t know)
+
+---
+### 📂 Requirements
+-Python 3.11 or higher
+-Ollama installed and running locally
+-Internet required only for initial model download
+
