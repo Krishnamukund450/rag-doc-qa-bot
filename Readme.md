@@ -32,14 +32,6 @@ It allows users to upload documents and ask natural language questions. The syst
 
 ---
 
-## 🧠 Architecture Overview
-
-Documents → Ingestion → Chunking → Embeddings → Vector DB
-↓
-User Query → Retrieval → LLM → Answer + Sources
-
-
----
 
 ## 📥 Document Ingestion
 
