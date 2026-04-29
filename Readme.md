@@ -89,3 +89,13 @@ It allows users to upload documents and ask natural language questions. The syst
 **Safety:**
 - If answer not found → returns “I don’t know”
 
+---
+
+# 🚀 FINAL STEP
+
+After adding:
+
+```bash
+git add README.md
+git commit -m "Added instructions section"
+git push
