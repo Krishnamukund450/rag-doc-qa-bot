@@ -1,7 +1,7 @@
 from langchain_community.chat_models import ChatOllama
 
 def generate_answer(query, docs):
-    llm = ChatOllama(model="llama3")
+    llm = ChatOllama(model="phi3")
 
     context = "\n\n".join([doc.page_content for doc in docs])
 
