@@ -17,6 +17,9 @@ spec:
         app: rag-backend
 
     spec:
+
+      serviceAccountName: rag-backend-sa
+
       containers:
         - name: rag-backend
 
@@ -41,6 +44,13 @@ spec:
                 configMapKeyRef:
                   name: rag-config
                   key: MODEL_NAME
+
+            - name: SECRET_MESSAGE
+
+              valueFrom:
+                secretKeyRef:
+                  name: rag-secret
+                  key: SECRET_MESSAGE
 
           volumeMounts:
             - mountPath: /app/data

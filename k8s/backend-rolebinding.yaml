@@ -1,0 +1,17 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+
+metadata:
+  name: rag-backend-rolebinding
+
+subjects:
+  - kind: ServiceAccount
+
+    name: rag-backend-sa
+
+roleRef:
+  kind: Role
+
+  name: rag-backend-role
+
+  apiGroup: rbac.authorization.k8s.io

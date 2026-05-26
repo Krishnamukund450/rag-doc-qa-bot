@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+
+metadata:
+  name: backend-network-policy
+
+spec:
+  podSelector:
+    matchLabels:
+      app: rag-backend
+
+  policyTypes:
+    - Ingress
+
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: rag-frontend
+
+      ports:
+        - protocol: TCP
+          port: 8000
