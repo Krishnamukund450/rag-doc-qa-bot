@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: rag-backend
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: rag-backend
+
+  template:
+    metadata:
+      labels:
+        app: rag-backend
+
+    spec:
+      containers:
+        - name: rag-backend
+
+          image: rag-doc-qa-bot-backend:latest
+
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - containerPort: 8000
+
+          env:
+            - name: OLLAMA_HOST
+
+              valueFrom:
+                configMapKeyRef:
+                  name: rag-config
+                  key: OLLAMA_HOST
+
+            - name: MODEL_NAME
+
+              valueFrom:
+                configMapKeyRef:
+                  name: rag-config
+                  key: MODEL_NAME
+
+          volumeMounts:
+            - mountPath: /app/data
+              name: rag-storage
+
+            - mountPath: /app/db
+              name: rag-storage
+
+      volumes:
+        - name: rag-storage
+
+          persistentVolumeClaim:
+            claimName: rag-backend-pvc

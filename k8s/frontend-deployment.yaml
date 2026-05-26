@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: rag-frontend
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: rag-frontend
+
+  template:
+    metadata:
+      labels:
+        app: rag-frontend
+
+    spec:
+      containers:
+        - name: rag-frontend
+
+          image: rag-doc-qa-bot-frontend:latest
+
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - containerPort: 8501
+
+          env:
+            - name: API_URL
+
+              valueFrom:
+                configMapKeyRef:
+                  name: rag-config
+                  key: API_URL
