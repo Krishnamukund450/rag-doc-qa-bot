@@ -57,6 +57,6 @@ jobs:
           git config --global user.email "github-actions@github.com"
 
           git add rag-chart/values.yaml
-          git commit -m "Updated image tag to ${{ env.IMAGE_TAG }}" || echo "No changes"
+          git commit -m "Updated image tag to ${{ env.IMAGE_TAG }} [skip ci]" || echo "No changes"
 
           git push
