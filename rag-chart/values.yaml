@@ -12,13 +12,13 @@ image:
   # This sets the pull policy for images.
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 815321c
+  tag: aa35af2
 =======
 >>>>>>> 05c5027 (Fixed corrupted Helm values)
 
   pullPolicy: IfNotPresent
 
-  tag: "77d6082"
+  tag: aa35af2
 
 imagePullSecrets: []
 
