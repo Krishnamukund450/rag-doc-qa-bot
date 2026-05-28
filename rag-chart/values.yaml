@@ -67,7 +67,10 @@ ingress:
         - path: /
           pathType: Prefix
 
-  tls: []
+  tls:
+    - secretName: rag-tls
+      hosts:
+        - rag.local
     # - secretName: chart-example-tls
     #   hosts:
     #     - chart-example.local
