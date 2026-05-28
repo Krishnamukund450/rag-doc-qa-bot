@@ -8,7 +8,7 @@ replicaCount: 1
 image:
   repository: krishnamukund450/rag-backend
   pullPolicy: IfNotPresent
-  tag: 448aa5c
+  tag: be598a0
 
 imagePullSecrets: []
 
